@@ -13,7 +13,6 @@ suite('Functional Tests', function () {
       .get('/api/convert')
       .query({ input: '4gal' })
       .end(function (err, res) {
-        console.log(res)
         assert.equal(res.status, 200);
         assert.equal(res.text, JSON.stringify({
           "initNum": 4,
