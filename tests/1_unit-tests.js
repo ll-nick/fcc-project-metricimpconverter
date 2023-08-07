@@ -19,8 +19,14 @@ suite('Unit Tests', function () {
 
     test('fractional number input', function () {
         assert.equal(convertHandler.getNum('123/8gal'), 123 / 8)
-        assert.equal(convertHandler.getNum('14.2/1.4lbs'), 14.2 / 1.4)
+        assert.equal(convertHandler.getNum('14/1lbs'), 14 / 1)
         assert.equal(convertHandler.getNum('4/2mi'), 4 / 2)
+    });
+
+    test('fractional decimal number input', function () {
+        assert.equal(convertHandler.getNum('123.1/8.2gal'), 123.1 / 8.2)
+        assert.equal(convertHandler.getNum('14.3/1.4lbs'), 14.3 / 1.4)
+        assert.equal(convertHandler.getNum('4.5/2.6mi'), 4.5 / 2.6)
     });
 
     test('double-fractional number input', function () {
@@ -68,12 +74,22 @@ suite('Unit Tests', function () {
         assert.equal(convertHandler.spellOutUnit('km'), 'kilometers')
     });
 
-    test('convert', function () {
+    test('gal to L', function () {
         assert.approximately(convertHandler.convert(1, 'gal'), 3.78541, 0.00001)
+    });
+    test('lbs to kg', function () {
         assert.approximately(convertHandler.convert(2.5, 'lbs'), 1.13398, 0.00001)
+    });
+    test('mi to km', function () {
         assert.approximately(convertHandler.convert(3.7, 'mi'), 5.95456, 0.00001)
+    });
+    test('L to gal', function () {
         assert.approximately(convertHandler.convert(20, 'L'), 5.28344, 0.00001)
+    });
+    test('kg to lbs', function () {
         assert.approximately(convertHandler.convert(123.123, 'kg'), 271.43997, 0.00001)
+    });
+    test('km to mi', function () {
         assert.approximately(convertHandler.convert(1000, 'km'), 621.37274, 0.00001)
     });
 });
