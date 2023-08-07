@@ -31,7 +31,7 @@ function ConvertHandler() {
 
     let numStr = input.substring(0, i);
     if (numStr.match(/^\d+\.\d+$/) || numStr.match(/^\d+$/)) return parseFloat(numStr)
-    if (numStr.match(/^\d+[\/]\d+$/)) {
+    if (numStr.match(/^\d+(\.\d+)?\/\d+(\.\d+)?$/)) {
       let values = numStr.split('/');
       return parseFloat(values[0]) / parseFloat(values[1])
     }

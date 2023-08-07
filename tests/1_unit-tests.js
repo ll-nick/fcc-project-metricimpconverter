@@ -19,7 +19,7 @@ suite('Unit Tests', function () {
 
     test('fractional number input', function () {
         assert.equal(convertHandler.getNum('123/8gal'), 123 / 8)
-        assert.equal(convertHandler.getNum('14/1lbs'), 14 / 1)
+        assert.equal(convertHandler.getNum('14.2/1.4lbs'), 14.2 / 1.4)
         assert.equal(convertHandler.getNum('4/2mi'), 4 / 2)
     });
 
