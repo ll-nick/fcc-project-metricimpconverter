@@ -43,6 +43,8 @@ function ConvertHandler() {
     let i = findFirstLetterPosition(input);
     let numStr = input.substring(i);
 
+    numStr = numStr.toLowerCase()
+    if (numStr === 'l') numStr = 'L'
     if (validUnit(numStr)) return numStr
 
     throw new Error('invalid unit')

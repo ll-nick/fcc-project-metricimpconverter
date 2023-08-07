@@ -7,8 +7,8 @@ let convertHandler = new ConvertHandler();
 suite('Unit Tests', function () {
     test('whole number input', function () {
         assert.equal(convertHandler.getNum('123gal'), 123)
-        assert.equal(convertHandler.getNum('14lbs'), 14)
-        assert.equal(convertHandler.getNum('4mi'), 4)
+        assert.equal(convertHandler.getNum('14LBS'), 14)
+        assert.equal(convertHandler.getNum('4Mi'), 4)
     });
 
     test('decimal number input', function () {
